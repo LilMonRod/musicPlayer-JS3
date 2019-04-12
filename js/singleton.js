@@ -103,7 +103,6 @@ const Singleton = (function () {
          * Add a new song
          */
         addSong (index, song) {
-            let index = DATA.length;
             DATA[index].push(song);
 
             this.updateStorage();
