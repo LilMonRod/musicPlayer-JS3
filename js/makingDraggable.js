@@ -11,6 +11,7 @@
     d.addEventListener('drop', (e) => { // eslint-disable-line
         if(e.target.classList[1] === 'cont-drag-js') {
             e.target.appendChild(draggedElement);
+            console.log(e.target);
         }
     }, false);
 })(document);

@@ -6,48 +6,9 @@
 
 const Player = (function () {
     // private vars
-
-    // const songs = new ListSongs();
-    const playList = [
-        {
-          name: 'Tengo tu love',
-          artist: 'Sie7e',
-          album: 'Mucha Cosa Buena',
-          year: '2011',
-          cover: 'img/album/sie7e.jpg',
-          stared: false,
-          src: 'songs/Sie7e - Tengo Tu Love.mp3'
-        },
-        {
-          name: 'Por amor al arte',
-          artist: 'Ivan Guevara',
-          album: 'Por amor al arte',
-          year: '2003',
-          cover: 'img/album/por amor.jpg',
-          stared: false,
-          src: 'songs/Por amor al arte - Ivan Guevara.mp3'
-        },
-        {
-          name: 'Thinking Out Loud',
-          artist: 'Ed Sheeran',
-          album: 'Thinking Out Loud',
-          year: '2014',
-          cover: 'img/album/thinking.jpg',
-          stared: false,
-          src: 'songs/Ed Sheeran - Thinking Out Loud.mp3'
-        },
-        {
-          name: 'Tu Sin Mi',
-          artist: 'Dread Mar I',
-          album: '10 Años',
-          year: '2005',
-          cover: 'img/album/10años.png',
-          stared: false,
-          src: 'songs/Dread Mar I - Tu Sin Mi.mp3'
-        }
-        
-    ];
-
+    const completeMatriz = new Singleton();
+    const playList = completeMatriz.data[0];
+    
     // Player class
     return class Player {
         
@@ -67,11 +28,8 @@ const Player = (function () {
         forward = null;
         next = null;
         song = null;
-        
-        // The player must display the current song playing name, artist and album
-        // When the user clicks a song on both panels (available or playing song lists), then the song is selected
-        // When a song is selected the Delete and Edit song buttons are enabled
-        constructor (songTitle, songSlider, currentTime, duration, volumeSlider) {
+
+        constructor (songTitle, songSlider, currentTime, duration, volumeSlider, star) {
             // elements
             this.songTitle = document.querySelector(songTitle);
             this.songSlider = document.querySelector(songSlider);
@@ -85,6 +43,8 @@ const Player = (function () {
             this.playOrPause = document.getElementById('playOrPause');
             this.forward = document.getElementById('forward');
             this.next = document.getElementById('next');
+            this.star = document.getElementById(star);
+            
 
             this.song = new Audio();
             this.currentSong = 0;
@@ -131,11 +91,20 @@ const Player = (function () {
             p.songTitle.textContent = (p.currentSong + 1 + '.' + dataSong.name + ' ' + '-' + ' ' + dataSong.artist);
             p.song.playbackRate = 1;
             p.song.volume = p.volumeSlider.value;
+
             if (dataSong.cover !== '') {
                 p.imgSong.src = dataSong.cover;
             } else {
                 p.imgSong.src = "img/main/lot.webp";
-            }
+            };
+
+
+            if (!dataSong.stared) {
+                p.star.src = "img/assets/star.svg"
+            } else {
+                p.star.src = "img/assets/star-selected.svg"
+            };
+
             p.song.play().then(()=>{
                 setTimeout(() => {
                     p.showduration(p);
@@ -210,6 +179,35 @@ const Player = (function () {
         decreasePlaybackRate(p) {
             p.song.playbackRate -= 0.5;
         }
+        
+
+
+        /*****************************************************************************************
+         * ***************************************************************************************
+         * ***************************************************************************************
+         *****************************************************************************************
+        registerSubscritions () {
+            for(let sub in PomodoroTask.Subscritions){
+                switch (sub) {
+                    case 'ADDED':
+                        Mediator.Subscribe(PomodoroTask.Subscritions.ADDED, this.added.bind(this));
+                        break;
+                    case 'FINISHED':
+                        Mediator.Subscribe(PomodoroTask.Subscritions.FINISHED, this.finished.bind(this));
+                        break;
+                    case 'REMOVE':
+                        Mediator.Subscribe(PomodoroTask.Subscritions.REMOVE, this.remove.bind(this));
+                        break;
+                    case 'REMOVED':
+                        Mediator.Subscribe(PomodoroTask.Subscritions.REMOVED, this.onRemoved.bind(this));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        */
         
     };
 })();

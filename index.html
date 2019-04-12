@@ -30,14 +30,14 @@
 				<button id="btn-config-delete" class="btn-config delete"  disabled=true>Delete</button>
 				<button id="btn-config-edit" class="btn-config edit"  disabled=true>Edit</button>
 
-				<input type="search" class="btn-search" value="Search" id="songs-search" name="Songs">
+				<input id="search" type="search" class="btn-search" value="Search" id="songs-search" name="Songs">
 			</div>
-			<div id="complete-list" class="box cont-drag-js space scroll-bar box-hover">
+			<div id="completeList" class="box cont-drag-js space scroll-bar box-hover">
 				
 			</div>
 			<div id="selected-list" class="box cont-drag-js space scroll-bar box-hover"></div>
 		</li>
-		<li class="tab container-tab">
+		<li id="container-playable" class="tab container-tab">
 			<h2 class="tab-header">Import song</h2>
 			<form action="" class="clearfix">
 				<div class="box">
@@ -117,18 +117,21 @@
 
       <img class="controllers__img--vol" src="img/assets/volume.svg" alt="">
       
-      <input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01"/>
+			<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+			<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
         </div>
       </div>
     </div>
-    </div>
-    
-    <script src="js/showList.js"></script>
+	</div>
+
+	<script src="js/mediator.js"></script> 
+	<script src="js/singleton.js"></script>
 	<script src="js/makingDraggable.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/player.js"></script>
+  <script src="js/mainListSongs.js"></script>
+	<script src="js/tabs.js"></script>
+  <script src="js/musicPlayer.js"></script>
 	<script src="js/main.js"></script> 
 	
- 
+
 </body>
 </html>

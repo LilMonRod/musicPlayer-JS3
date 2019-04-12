@@ -1,9 +1,11 @@
 .clearfix {
     clear: both;
 }
+
 .player__img {
     width: 50px;
 }
+
 .player-container {
     width: 600px;
     height: 135px;
@@ -80,6 +82,15 @@
     float: left;
     width: 48%;
     margin: 0 1% 0 1%;
+}
+
+.volume {
+    width: 100px;
+}
+
+.star {
+    width: 36px;
+    margin: 2px 7px;
 }
 /* gold	rgb(255, 215, 0)	#FFD700
 

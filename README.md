@@ -9,7 +9,7 @@ OOP with JavaScript
 JavaScript design patterns
 HTML5 APIs
 
-###Description
+### Description
 
 Create a web application to play audio and import songs using JavaScript and standar HTML5 Audio, Localstorage and drag and drop APIs.
 
