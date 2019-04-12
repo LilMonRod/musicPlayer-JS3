@@ -1,6 +1,10 @@
 const CompleteList = (function () {
     const containerPlayableList = document.getElementById('container-playable');
     const PREFIX = 'List';
+    btnConfigDelete = document.getElementById('btn-config-delete');
+    btnConfigEdit = document.getElementById('btn-config-edit');
+
+
 
     return class CompleteList {
         static Subscriptions = Object.freeze({
@@ -11,25 +15,52 @@ const CompleteList = (function () {
             this.container = document.getElementById(container);
             this.completeMatriz = new Singleton();
             this.matriz = this.completeMatriz.data[0];
+            const btnConfigDelete = document.getElementById('btn-config-delete');
+            const btnConfigEdit = document.getElementById('btn-config-edit');
+            const main = this;  
+            const listItems = Array.prototype.slice.apply(document.querySelectorAll('list-item'));          
 
             // subscriptions
             Mediator.Subscribe(Singleton.Subscriptions.SONG_ADDED, this.addSong.bind(this));
             Mediator.Subscribe(Singleton.Subscriptions.SONG_REMOVED, this.removeSong.bind(this));
 
-            // print the table in the DOM
+            // print the list of songs
             this.render(this.container, this.matriz);
+
+            // listen the element that has been selected
+            document.getElementById('container-list').addEventListener('click', e => {
+                if (e.target.classList.contains('list-item')) {
+                    listItems.map(listItem => listItem.classList.remove('active'));
+                    e.target.classList.add('active');
+                    btnConfigDelete.removeAttribute('disabled');
+                    btnConfigEdit.removeAttribute('disabled');
+
+                    // listen the onclick
+                    btnConfigDelete.addEventListener('click', function(){
+                    main.getConfirmation(this, e.target, main);
+            });
+
+                };
+                if (!e.target.classList.contains('list-item')) {
+                    listItems.map(listItem => listItem.classList.remove('active'));
+                    e.target.classList.add('active');
+                    btnConfigDelete.setAttribute('disabled', 'true');
+                    btnConfigEdit.setAttribute('disabled', 'true');
+                };
+            });
+
         }
 
         render(container, matriz) {
             for (let i = 0; i < matriz.length; i+=1) {
-                this.createItemSong(matriz[i], container);
-                console.log(matriz[i]);
+                this.createItemSong(matriz[i], container, i);
             }
         }
 
-        createItemSong(item, containerDom) {
+        createItemSong(item, containerDom, index) {
             const container = document.createElement('div');
             container.setAttribute('class', 'clearfix');
+            container.setAttribute('index', index);
             container.setAttribute('class', 'list-item');
             container.setAttribute('draggable', 'true');
             container.setAttribute('ondragstart', 'event.dataTransfer.setData("text/plain",null)');
@@ -59,27 +90,6 @@ const CompleteList = (function () {
             container.appendChild(title);
             container.appendChild(datos);
             containerDom.appendChild(container);
-        }
-
-
-        /**
-         * Select a song item
-         * @param {event} event
-         * @returns {boolean}
-         */
-        selectCell (event, element = null) {
-            let td = element ? element : event.target;
-
-            if(td.tagName !== 'TD') return false;
-
-            // td.setAttribute('tabindex', 0);
-            td.classList.toggle('selected-cell');
-
-            if(this.selectedCell) this.selectedCell.classList.remove('selected-cell');
-            this.selectedCell = td;
-
-            // publish the selected cell
-            Mediator.Publish(Table.Subscriptions.CELL_SELECTED, {td: this.selectedCell});
         }
 
         addSong (data){
@@ -123,34 +133,42 @@ const CompleteList = (function () {
          * Reset the selected row
          * @param data
          */
-        removeSong (data) {
-            // reset the selected row
-            this.selectedRow = null;
-            this._footerMessage(`Row Removed: ${data.index+1}`);
+        removeSong (data, main) {
+            // get index to remove from single ton
+            const index = data.getAttribute('index');
+            console.log(index);
+            console.log(main.matriz);
+            console.log(main.matriz[index]);
+            // remove the song
+            main.matriz.splice(index, 1);
+            
+            console.log(main.matriz);
+            console.log(main.matriz[index]);
 
-            // finds all the rows
-            let rows = Array.from(this.tbody.children);
+            let parent = data.parentNode;
+            // remove the DOM element
+            data.parentNode.removeChild(data);
 
-            // takes only the trs to update
-            rows.splice(data.index, rows.length)
-                .forEach((row, i) => {
-                    if(i === 0) return row.parentNode.removeChild(row);
-
-                    // update the row tr
-                    row.setAttribute('data-row', data.index);
-                    row.firstChild.innerText = data.index+1;
-                    row.firstChild.setAttribute('data-row', data.index);
-
-                    // update the row columns coords
-                    Array.from(row.children)
-                        .filter(column => column.tagName !== 'TH') // ignores the th
-                        .forEach((column, columnIndex) => {
-                            column.setAttribute('data-cell', `${data.index}:${columnIndex}`);
-                        });
-
-                    data.index++;
-                });
+            Mediator.Publish(Singleton.Subscriptions.SONG_REMOVED, {index});
         }
+
+
+        
+        /**
+         * Method when btnConfigDelete  has been clicked
+         * @param {Event} event
+         * @returns {boolean} */
+        getConfirmation(event, elementToDelete, main) {
+
+            var retVal = confirm("Do you really want to delete this song?");
+            if( retVal == true ) {
+                main.removeSong(elementToDelete, main);
+                return true;
+            } else {
+                document.write ("User does not want to continue!");
+                return false;
+            }
+            }
 
 
     }

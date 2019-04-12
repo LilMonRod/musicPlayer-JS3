@@ -88,7 +88,6 @@ const Singleton = (function () {
                 this.getStorage();
                 instance = this;
             }
-            console.log(instance);
             return instance;
         }
 
