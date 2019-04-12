@@ -208,3 +208,8 @@ img.floating {
 p.floating {
     width: 76%;
 }
+.check-star {
+    border-radius: 25%;
+    width: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+}

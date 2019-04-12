@@ -136,18 +136,9 @@ const CompleteList = (function () {
         removeSong (data, main) {
             // get index to remove from single ton
             const index = data.getAttribute('index');
-            console.log(index);
-            console.log(main.matriz);
-            console.log(main.matriz[index]);
-            // remove the song
-            main.matriz.splice(index, 1);
-            
-            console.log(main.matriz);
-            console.log(main.matriz[index]);
 
-            let parent = data.parentNode;
-            // remove the DOM element
-            data.parentNode.removeChild(data);
+            // remove the song
+            main.completeMatriz.removeSong('0', index);
 
             Mediator.Publish(Singleton.Subscriptions.SONG_REMOVED, {index});
         }

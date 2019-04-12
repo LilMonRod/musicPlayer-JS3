@@ -39,7 +39,7 @@
 		</li>
 		<li id="container-playable" class="tab container-tab">
 			<h2 class="tab-header">Import song</h2>
-			<form action="" class="clearfix">
+			<form id="formSongs" action="" class="clearfix">
 				<div class="box">
 					<div class="space">
 						<label for="Name">Name<span>*</span></label>
@@ -59,7 +59,11 @@
 					<div class="space"> 
 						<label for="Year">Year<span>*</span></label>
 						<br>
-						<input type="date" name="Year" id="year" required>
+						<input type="number" min="1000" max="2020" name="Year" id="year" required>
+					</div> 
+					<div class="space"> 
+						<label for="star">Star<span></span></label>
+						<input id="starSong" class="check-star" type="checkbox">
 					</div> 
 				</div>
 				<div class="box">
@@ -84,12 +88,13 @@
 					<input type="text" name="ogg" id="ogg">
 					</div>
 				</section>
+				<br>
 				</div>
 				<div class="container-btn box">
-					<button class="btn-import" type="submit">Save</button>
+					<button class="btn-import" type="reset">Reset</button>
 				</div>
 				<div class="container-btn">
-					<button class="btn-import" type="reset">Reset</button>
+					<button class="btn-import" type="submit">Save</button>
 				</div>
 			</form>
 		</li>
@@ -131,7 +136,7 @@
 	<script src="js/tabs.js"></script>
   <script src="js/musicPlayer.js"></script>
 	<script src="js/main.js"></script> 
-	
+	<script src="js/ImportForm.js"></script>
 
 </body>
 </html>

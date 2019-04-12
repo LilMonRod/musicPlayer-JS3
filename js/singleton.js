@@ -102,9 +102,9 @@ const Singleton = (function () {
         /**
          * Add a new song
          */
-        addSong () {
+        addSong (index, song) {
             let index = DATA.length;
-            DATA.push(song);
+            DATA[index].push(song);
 
             this.updateStorage();
             Mediator.Publish(Singleton.Subscriptions.SONG_ADDED, {index, value: song});
@@ -115,11 +115,11 @@ const Singleton = (function () {
          * @param index
          * @returns {boolean}
          */
-        removeSong (index) {
+        removeSong (matriz, index) {
             if(index <= -1) return false;
 
             // remove the song
-            DATA.splice(index, 1);
+            DATA[0].splice(index, 1);
 
             this.updateStorage();
             Mediator.Publish(Singleton.Subscriptions.SONG_REMOVED, {index});
