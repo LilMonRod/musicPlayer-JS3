@@ -86,9 +86,26 @@ const Player = (function () {
         
         loadSong(p, img = false) {
             const dataSong = playList[p.currentSong];
-            
+            const name = document.createElement('span');
+            name.setAttribute('class', 'nameSong');
+            name.setAttribute('class', 'textTitle');
+            name.textContent = dataSong.name;
+
+            const artist = document.createElement('span');
+            artist.setAttribute('class', 'artistSong');
+            artist.setAttribute('class', 'textTitle');
+            artist.textContent = dataSong.name;
+
+            const year = document.createElement('span');
+            year.setAttribute('class', 'yearSong');
+            year.setAttribute('class', 'textTitle');
+            year.textContent = dataSong.year;
+
             p.song.src = dataSong.src;
-            p.songTitle.textContent = (p.currentSong + 1 + '.' + dataSong.name + ' ' + '-' + ' ' + dataSong.artist);
+            p.songTitle.innerText = '';
+            p.songTitle.appendChild(name);
+            p.songTitle.appendChild(artist);
+            p.songTitle.appendChild(year);
             p.song.playbackRate = 1;
             p.song.volume = p.volumeSlider.value;
 

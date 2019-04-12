@@ -93,7 +93,8 @@ const CompleteList = (function () {
         }
 
         addSong (data){
-            // pintar los datos del form
+            // pintar los datos del lista
+
             const container = document.createElement('div');
             container.setAttribute('class', 'clearfix');
             container.setAttribute('class', 'list-item');
