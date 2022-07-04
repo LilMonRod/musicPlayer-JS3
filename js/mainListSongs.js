@@ -66,7 +66,7 @@ const CompleteList = (function () {
             container.setAttribute('ondragstart', 'event.dataTransfer.setData("text/plain",null)');
 
             const star = document.createElement('img');
-            star.setAttribute('class', 'floating');
+            star.setAttribute('class', 'icon-favorite');
             star.setAttribute('draggable', 'false');
 
             if (!item.stared) {
@@ -84,11 +84,15 @@ const CompleteList = (function () {
             datos.textContent = (item.year + ' ' + '-' + ' ' + item.album);
             datos.setAttribute('class', 'floating');
             datos.setAttribute('class', 'info');
+
+            const containerItemInfo = document.createElement('div');
+            containerItemInfo.setAttribute('class', 'containerItemInfo');
             
             
             container.appendChild(star);
-            container.appendChild(title);
-            container.appendChild(datos);
+            containerItemInfo.appendChild(title);
+            containerItemInfo.appendChild(datos);
+            container.appendChild(containerItemInfo);
             containerDom.appendChild(container);
         }
 
