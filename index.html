@@ -16,6 +16,14 @@
   </script>
 </head>
 <body>
+<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P8WXM6C');</script>
+<!-- End Google Tag Manager -->
+
   <div class="container container-bg clearfix">
      <!-- tabs -->
      <ul id="cont-tabs" class="wapper  wapper-space tabs-js">
@@ -26,7 +34,7 @@
      <ul class="wapper container-panels_JS">
 		<li id="container-list" class="tab container-tab  active">
 			<h2 class="tab-header">Playlist</h2>
-			<div class="actions-container">
+			<div class="action-container">
 				<select class="btn-config" name="sort" id="sort-songs">
 				<option value="" selected>Sort by</option>
 				<option value="artist">Artist</option>
@@ -41,10 +49,10 @@
 
 				<input id="search" type="search" class="btn-search" value="Search" id="songs-search" name="Songs">
 			</div>
-			<div id="completeList" class="box cont-drag-js space scroll-bar box-hover">
-				
+			<div class="song-lists">
+				<div id="completeList" class="cont-drag-js space  box-hover"></div>
+				<div id="selected-list" class="cont-drag-js space box-hover"></div>
 			</div>
-			<div id="selected-list" class="box cont-drag-js space scroll-bar box-hover"></div>
 		</li>
 		<li id="container-playable" class="tab container-tab">
 			<h2 class="tab-header">Import song</h2>
