@@ -125,20 +125,24 @@
       <div class="player">
         <div id="songTitle" class="song-title">My song title will be here</div>
         <input id="songSlider" class="song-slider" type="range" min="0" step="1"/>
-        <div>
+        <div class="controllers__time">
           <div id="currentTime" class="current-time">00:00</div>
           <div id="duration" class="duration">00:00</div>
         </div>
         <div class="controllers">
-      <img id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="">
-      <img id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="">
-      <img id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="">
-      <img id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="">
-      <img id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="">
+			<div class="controllers--song">
+				<img id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="">
+				<img id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="">
+				<img id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="">
+				<img id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="">
+				<img id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="">
+			</div>
 
-      <img class="controllers__img--vol" src="img/assets/volume.svg" alt="">
-      
-			<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+			<div class="controllers--volume">
+				<img class="controllers__img--vol" src="img/assets/volume.svg" alt="">	  
+				<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+			</div>
+
 			<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
         </div>
       </div>

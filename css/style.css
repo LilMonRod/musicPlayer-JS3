@@ -11,9 +11,12 @@ body {
     width: 50px;
 }
 
+.player {
+    width: 60%;
+    max-width: 600px;
+}
+
 .player-container {
-    width: 100vw;
-    height: 135px;
     color: #08152c;
     font-family: Verdana, Tahoma, sans-serif;
     font-size: 0.9em;
@@ -37,7 +40,6 @@ body {
 }
 
 .song-title {
-    width: 300px;
     padding: 5px 0;
     margin-bottom: 0;
     white-space: nowrap;
@@ -47,12 +49,14 @@ body {
 .song-slider {
     width: 100%;
 }
-.current-time {
-    float: left;
-    font-size: 10px;
+
+.controllers__time {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
+.current-time,
 .duration {
-    float: right;
     font-size: 10px;
 }
 .controllers__img--play {
@@ -60,7 +64,17 @@ body {
 }
 .controllers__img {
     width: 30px;
-} 
+}
+
+.controllers__songs,
+.controllers--volume {
+    display: flex;
+    align-items: center;
+}
+
+.controllers__songs {
+    width: 190px;
+}
 
 .controllers--hover:hover {
     opacity: 0.5;
@@ -73,7 +87,9 @@ body {
     margin-left: 5px;
 }
 .controllers {
-    clear: both;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .controllers *{
     vertical-align: middle;
@@ -174,6 +190,7 @@ body {
 .cont-drag-js {
     width: 45%;
     display: inline;
+    max-height: 388px;
     overflow-y: scroll;
 }
 .cont-drag-js:hover {
@@ -217,7 +234,7 @@ body {
     margin: 10px 0;
     display: flex;
     justify-content: flex-start;
-    max-width: 300px;
+    align-content: space-evenly;
 }
 .list-item:hover {
     background-color: rgba(255, 255, 255, 0.4);
@@ -226,7 +243,8 @@ body {
 .icon-favorite {
     max-width: 25px;
     max-height: 25px;
-    margin-right: 15px ;
+    margin-right: 15px;
+    align-self: center;
 }
 
 .containerItemInfo {
