@@ -66,13 +66,13 @@ body {
     width: 30px;
 }
 
-.controllers__songs,
+.controllers--songs,
 .controllers--volume {
     display: flex;
     align-items: center;
 }
 
-.controllers__songs {
+.controllers--songs {
     width: 190px;
 }
 
