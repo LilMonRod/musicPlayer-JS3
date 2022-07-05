@@ -13,12 +13,12 @@ body {
 .player-container {
     width: 100vw;
     height: 135px;
-    color: #003ba9;
+    color: #08152c;
     font-family: Verdana, Tahoma, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.9em;
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 15px;
+    padding: 50px 10px 5px;
 }
 .player-container--BG {
     background-color: rgba(255, 255, 255, 0.5);
@@ -30,8 +30,9 @@ body {
     border-radius: 25%;
 }
 
-.player {
-
+.sources>.space,
+.sources>p  {
+    margin-left: 10px;
 }
 
 .song-title {
@@ -77,9 +78,22 @@ body {
     vertical-align: middle;
 }
 
+#formSongs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container-btn {
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    margin: 20px 0 20px 0;
+}
+
 .box {
-    float: left;
     width: 48%;
+    max-width: 380px;
     margin: 0 1% 0 1%;
 }
 
@@ -151,12 +165,12 @@ body {
 .btn-import {
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.56);
-    padding: 5px;
-    border-radius: 30%;
+    padding: 8px 29px;
+    border-radius: 25px;
     margin: 30px 0 0 45px;
 }
 .btn-import:hover {
-    padding: 6px 8px;
+    background-color: rgb(255 255 255 / 70%)
 }
 .cont-drag-js {
     width: 45%;

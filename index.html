@@ -59,12 +59,12 @@
 			<form id="formSongs" action="" class="clearfix">
 				<div class="box">
 					<div class="space">
-						<label for="Name">Name<span>*</span></label>
+						<label for="Name">Song name<span>*</span></label>
 						<br>
 						<input type="text" name="Name" id="name" required>
 					</div>
 					<div  class="space">      
-						<label for="Album">Album<span>*</span></label>
+						<label for="Album">Album name<span>*</span></label>
 						<br>
 						<input type="text" name="Album" id="album" required>
 					</div>
@@ -87,30 +87,29 @@
 				<div class="space">
 					<label for="Image">Image</label>
 					<br>
-					<input type="text" name="Image" id="image">
+					<input type="file" name="Image" id="image" accept="image/png, image/jpeg, image/jpg">
 				</div>
 				<section class="sources space">
 					<p>Sources</p>
 					
 					<div class="space">
-					<label for="mp3">MP3</label>
-					<input type="text" name="mp3" id="mp3">
+						<label for="mp3">MP3</label>
+						<input type="text" name="mp3" id="mp3" accept="audio/mp3">
 					</div>
 					<div class="space">
-					<label for="wav">WAV</label>
-					<input type="text" name="wav" id="wav">
+						<label for="wav">WAV</label>
+						<input type="text" name="wav" id="wav" accept="audio/wav">
 					</div>
 					<div class="space">
-					<label for="ogg">OGG</label>
-					<input type="text" name="ogg" id="ogg">
+						<label for="ogg">OGG</label>
+						<input type="file" name="ogg" id="ogg" accept="audio/ogg">
 					</div>
 				</section>
 				<br>
 				</div>
-				<div class="container-btn box">
-					<button class="btn-import" type="reset">Reset</button>
-				</div>
 				<div class="container-btn">
+					<button class="btn-import" type="reset">Reset</button>
+
 					<button class="btn-import" type="submit">Save</button>
 				</div>
 			</form>
