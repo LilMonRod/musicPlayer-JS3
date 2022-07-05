@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-image: radial-gradient(circle, #1cd81c 0%, rgb(216 60 216) 25%, orange 100%);
 }
 
 .clearfix {
@@ -111,8 +112,6 @@ body {
 
  .container-bg {
     width: 100vw;
-    height: 100vh;
-    background-image: radial-gradient(circle, #1cd81c 0%, rgb(216 60 216) 25%, orange 100%);
 }
 
 .tab-ref {
