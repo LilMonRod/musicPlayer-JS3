@@ -60,7 +60,7 @@ const Singleton = (function () {
                 src: 'songs/Dread Mar I - Tu Sin Mi.mp3'
             },
             {
-                name: 'J&sbquo;ai cherché',
+                name: "J'ai cherché",
                 artist: 'Amir',
                 album: 'Au cœur de moi',
                 year: '2016',
@@ -79,7 +79,7 @@ const Singleton = (function () {
             },
             {
                 name: 'Yellow',
-                artist: 'COldplay',
+                artist: 'Coldplay',
                 album: 'Yellow',
                 year: '2000',
                 cover: 'img/album/Yellow_cover_art.jpg',
