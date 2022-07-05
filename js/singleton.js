@@ -47,7 +47,7 @@ const Singleton = (function () {
                 album: 'Thinking Out Loud',
                 year: '2014',
                 cover: 'img/album/thinking.jpg',
-                stared: false,
+                stared: true,
                 src: 'songs/Ed Sheeran - Thinking Out Loud.mp3'
             },
             {
@@ -56,8 +56,53 @@ const Singleton = (function () {
                 album: '10 Años',
                 year: '2005',
                 cover: 'img/album/10años.png',
-                stared: true,
+                stared: false,
                 src: 'songs/Dread Mar I - Tu Sin Mi.mp3'
+            },
+            {
+                name: 'J&sbquo;ai cherché',
+                artist: 'Amir',
+                album: 'Au cœur de moi',
+                year: '2016',
+                cover: 'img/album/AuCœurDeMoi.jpg',
+                stared: true,
+                src: 'songs/Amir - Je ai cherché.mp3'
+            },
+            {
+                name: 'Stolen dance',
+                artist: 'Milky Chance',
+                album: 'Sadnecessary',
+                year: '2013',
+                cover: 'img/album/Sadnecessary.jpg',
+                stared: false,
+                src: 'songs/milky_chance_stolen_dance.mp3'
+            },
+            {
+                name: 'Yellow',
+                artist: 'COldplay',
+                album: 'Yellow',
+                year: '2000',
+                cover: 'img/album/Yellow_cover_art.jpg',
+                stared: true,
+                src: 'songs/coldplay_yellow.mp3'
+            },
+            {
+                name: 'Immortals',
+                artist: 'Fall Out Boy',
+                album: 'Big Hero 6',
+                year: '2014',
+                cover: 'img/album/Fall_Out_Boy_-_Immortals.png',
+                stared: true,
+                src: 'songs/fall_out_boy_immortals.mp3'
+            },
+            {
+                name: 'Hypotheticals',
+                artist: 'Lake Street Dive',
+                album: 'Obviously',
+                year: '2021',
+                cover: 'img/album/a1894322872_10.jpg',
+                stared: true,
+                src: 'songs/lake_street_dive_hypotheticals.mp3'
             }
         ],
         []
