@@ -37,7 +37,7 @@ const Singleton = (function () {
                 artist: 'Ivan Guevara',
                 album: 'Por amor al arte',
                 year: '2003',
-                cover: '',
+                cover: 'img/album/por amor.jpg',
                 stared: false,
                 src: 'songs/Por amor al arte - Ivan Guevara.mp3'
             },
