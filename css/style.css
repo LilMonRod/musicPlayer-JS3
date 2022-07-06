@@ -70,6 +70,7 @@ body {
 .controllers--volume {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .controllers--songs {
