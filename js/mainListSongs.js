@@ -60,7 +60,7 @@ const CompleteList = (function () {
         createItemSong(item, containerDom, index) {
             const container = document.createElement('div');
             container.setAttribute('class', 'clearfix');
-            container.setAttribute('index', index);
+            container.dataset.index = index///////////////////////////////////////
             container.setAttribute('class', 'list-item');
             container.setAttribute('draggable', 'true');
             container.setAttribute('ondragstart', 'event.dataTransfer.setData("text/plain",null)');
@@ -140,7 +140,7 @@ const CompleteList = (function () {
          */
         removeSong (data, main) {
             // get index to remove from single ton
-            const index = data.getAttribute('index');
+            const index = data.dataset.index
 
             // remove the song
             console.log(data);
