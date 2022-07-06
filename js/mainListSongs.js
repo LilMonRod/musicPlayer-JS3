@@ -143,6 +143,8 @@ const CompleteList = (function () {
             const index = data.getAttribute('index');
 
             // remove the song
+            console.log(data);
+            console.log(main.completeMatriz)
             main.completeMatriz.removeSong('0', index);
 
             Mediator.Publish(Singleton.Subscriptions.SONG_REMOVED, {index});
@@ -161,10 +163,10 @@ const CompleteList = (function () {
                 main.removeSong(elementToDelete, main);
                 return true;
             } else {
-                document.write ("User does not want to continue!");
+                alert("User does not want to continue!");
                 return false;
             }
-            }
+        }
 
 
     }
