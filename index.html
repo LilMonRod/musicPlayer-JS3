@@ -1,166 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Audio player</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/assets/apple_music_logo.png" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KTFGX6H3D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4KTFGX6H3D');
-  </script> -->
-
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	<meta charset="UTF-8">
+	<title>Audio player</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/assets/apple_music_logo.png" />
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-53WFV9Z');</script>
 	<!-- End Google Tag Manager -->
 </head>
 <body>
-  <div class="container container-bg clearfix">
-     <!-- tabs -->
-     <ul id="cont-tabs" class="wapper  wapper-space tabs-js">
-       <li class="tab-ref tab-item-js active">Playlist</li>
-       <li class="tab-ref tab-item-js">Import</li>
-     </ul>
-
-     <ul class="wapper container-panels_JS">
-		<li id="container-list" class="tab container-tab  active">
-			<h2 class="tab-header">Playlist</h2>
-			<div class="action-container">
-				<select class="btn-config" name="sort" id="sort-songs">
-				<option value="" selected>Sort by</option>
-				<option value="artist">Artist</option>
-				<option value="album">Album</option>
-				<option value="name">Name</option>
-				<option value="started">Started</option>
-				<option value="year">Year</option>
-				</select>
-
-				<button id="btn-config-delete" class="btn-config delete"  disabled=true>Delete</button>
-				<button id="btn-config-edit" class="btn-config edit"  disabled=true>Edit</button>
-
-				<input id="search" type="search" class="btn-search" placeholder="Search..." id="songs-search" name="Songs">
-			</div>
-			<div class="song-lists">
-				<div id="completeList" class="cont-drag-js space  box-hover"></div>
-				<div id="selected-list" class="cont-drag-js space box-hover"></div>
-			</div>
-		</li>
-		<li id="container-playable" class="tab container-tab">
-			<h2 class="tab-header">Import song</h2>
-			<form id="formSongs" action="" class="clearfix">
-				<div class="box">
-					<div class="space">
-						<label for="Name">Song name<span>*</span></label>
-						<br>
-						<input type="text" name="Name" id="name" required>
-					</div>
-					<div  class="space">      
-						<label for="Album">Album name<span>*</span></label>
-						<br>
-						<input type="text" name="Album" id="album" required>
-					</div>
-					<div class="space">
-						<label for="Artist">Artist<span>*</span></label>
-						<br>
-						<input type="text" name="Artist" id="artist" required>
-					</div>
-					<div class="space"> 
-						<label for="Year">Year<span>*</span></label>
-						<br>
-						<input type="number" min="1000" max="2020" name="Year" id="year" required>
-					</div> 
-					<div class="space"> 
-						<label for="star">Star<span></span></label>
-						<input id="starSong" class="check-star" type="checkbox">
-					</div> 
-				</div>
-				<div class="box">
-				<div class="space">
-					<label for="Image">Image</label>
-					<br>
-					<input type="file" name="Image" id="image" accept="image/png, image/jpeg, image/jpg">
-				</div>
-				<section class="sources space">
-					<p>Sources</p>
+	<div class="container container-bg clearfix">
+		<!-- tabs -->
+		<ul id="cont-tabs" class="wapper  wapper-space tabs-js">
+			<li class="tab-ref tab-item-js active">Playlist</li>
+			<li class="tab-ref tab-item-js">Import</li>
+		</ul>
+		
+		<ul class="wapper container-panels_JS">
+			<li id="container-list" class="tab container-tab  active">
+				<h2 class="tab-header">Playlist</h2>
+				<div class="action-container">
+					<select class="btn-config" name="sort" id="sort-songs">
+						<option value="" selected>Sort by</option>
+						<option value="artist">Artist</option>
+						<option value="album">Album</option>
+						<option value="name">Name</option>
+						<option value="started">Started</option>
+						<option value="year">Year</option>
+					</select>
 					
-					<div class="space">
-						<label for="mp3">MP3</label>
-						<input type="text" name="mp3" id="mp3" accept="audio/mp3">
-					</div>
-					<div class="space">
-						<label for="wav">WAV</label>
-						<input type="text" name="wav" id="wav" accept="audio/wav">
-					</div>
-					<div class="space">
-						<label for="ogg">OGG</label>
-						<input type="file" name="ogg" id="ogg" accept="audio/ogg">
-					</div>
-				</section>
-				<br>
+					<button id="btn-config-delete" class="btn-config delete"  disabled=true>Delete</button>
+					<button id="btn-config-edit" class="btn-config edit"  disabled=true>Edit</button>
+					
+					<input id="search" type="search" class="btn-search" placeholder="Search..." id="songs-search" name="Songs">
 				</div>
-				<div class="container-btn">
-					<button class="btn-import" type="reset">Reset</button>
-
-					<button class="btn-import" type="submit">Save</button>
+				<div class="song-lists">
+					<div id="completeList" class="cont-drag-js space  box-hover"></div>
+					<div id="selected-list" class="cont-drag-js space box-hover"></div>
 				</div>
-			</form>
-		</li>
-
-  </ul>
-
-     <!-- player -->
-    <div class="player-container player-container--BG clearfix">
-      <div class="logo">
-        <img id="logo-song" class="logo-img" src="img/main/lot.webp" alt="">
-      </div>
-      <div class="player">
-        <div id="songTitle" class="song-title">My song title will be here</div>
-        <input id="songSlider" class="song-slider" type="range" min="0" step="1"/>
-        <div class="controllers__time">
-          <div id="currentTime" class="current-time">00:00</div>
-          <div id="duration" class="duration">00:00</div>
-        </div>
-        <div class="controllers">
-			<div class="controllers--songs">
-				<img id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="">
-				<img id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="">
-				<img id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="">
-				<img id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="">
-				<img id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="">
+			</li>
+			<li id="container-playable" class="tab container-tab">
+				<h2 class="tab-header">Import song</h2>
+				<form id="formSongs" action="" class="clearfix">
+					<div class="box">
+						<div class="space">
+							<label for="Name">Song name<span>*</span></label>
+							<br>
+							<input type="text" name="Name" id="name" required>
+						</div>
+						<div  class="space">      
+							<label for="Album">Album name<span>*</span></label>
+							<br>
+							<input type="text" name="Album" id="album" required>
+						</div>
+						<div class="space">
+							<label for="Artist">Artist<span>*</span></label>
+							<br>
+							<input type="text" name="Artist" id="artist" required>
+						</div>
+						<div class="space"> 
+							<label for="Year">Year<span>*</span></label>
+							<br>
+							<input type="number" min="1000" max="2020" name="Year" id="year" required>
+						</div> 
+						<div class="space"> 
+							<label for="star">Star<span></span></label>
+							<input id="starSong" class="check-star" type="checkbox">
+						</div> 
+					</div>
+					<div class="box">
+						<div class="space">
+							<label for="Image">Image</label>
+							<br>
+							<input type="file" name="Image" id="image" accept="image/png, image/jpeg, image/jpg">
+						</div>
+						<section class="sources space">
+							<p>Sources</p>
+							
+							<div class="space">
+								<label for="mp3">MP3</label>
+								<input type="text" name="mp3" id="mp3" accept="audio/mp3">
+							</div>
+							<div class="space">
+								<label for="wav">WAV</label>
+								<input type="text" name="wav" id="wav" accept="audio/wav">
+							</div>
+							<div class="space">
+								<label for="ogg">OGG</label>
+								<input type="file" name="ogg" id="ogg" accept="audio/ogg">
+							</div>
+						</section>
+						<br>
+					</div>
+					<div class="container-btn">
+						<button class="btn-import" type="reset">Reset</button>
+						
+						<button class="btn-import" type="submit">Save</button>
+					</div>
+				</form>
+			</li>
+			
+		</ul>
+		
+		<!-- player -->
+		<div class="player-container player-container--BG clearfix">
+			<div class="logo">
+				<img id="logo-song" class="logo-img" src="img/main/lot.webp" alt="">
 			</div>
-
-			<div class="controllers--volume">
-				<img class="controllers__img--vol" src="img/assets/volume.svg" alt="">	  
-				<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+			<div class="player">
+				<div id="songTitle" class="song-title">My song title will be here</div>
+				<input id="songSlider" class="song-slider" type="range" min="0" step="1"/>
+				<div class="controllers__time">
+					<div id="currentTime" class="current-time">00:00</div>
+					<div id="duration" class="duration">00:00</div>
+				</div>
+				<div class="controllers">
+					<div class="controllers--songs">
+						<img id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="">
+						<img id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="">
+						<img id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="">
+						<img id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="">
+						<img id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="">
+					</div>
+					
+					<div class="controllers--volume">
+						<img class="controllers__img--vol" src="img/assets/volume.svg" alt="">	  
+						<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+					</div>
+					
+					<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
+				</div>
 			</div>
-
-			<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
-        </div>
-      </div>
-    </div>
+		</div>
 	</div>
-
+	
 	<script src="js/mediator.js"></script> 
 	<script src="js/singleton.js"></script>
 	<script src="js/makingDraggable.js"></script>
-  <script src="js/mainListSongs.js"></script>
+	<script src="js/mainListSongs.js"></script>
 	<script src="js/tabs.js"></script>
-  <script src="js/musicPlayer.js"></script>
+	<script src="js/musicPlayer.js"></script>
 	<script src="js/main.js"></script> 
 	<script src="js/ImportForm.js"></script>
-
+	
 	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53WFV9Z"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-</body>
-</html>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53WFV9Z"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	</body>
+	</html>
+	
