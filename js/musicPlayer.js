@@ -90,7 +90,8 @@ const Player = (function () {
             */
             this.completeDomList = document.querySelector('list-item');
             window.addEventListener('click', function(e) {
-                console.log(e);
+                console.log(e.path[2]);
+                console.log(e.path[2].dataset.index);
                 // player.loadSong(player, player.playOrPause);
             });
 
