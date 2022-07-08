@@ -29,7 +29,7 @@ const Player = (function () {
         next = null;
         song = null;
 
-        constructor (songTitle, songSlider, currentTime, duration, volumeSlider, star) {
+        constructor (songTitle, songSlider, currentTime, duration, volumeSlider, star, completeList) {
             // elements
             this.songTitle = document.querySelector(songTitle);
             this.songSlider = document.querySelector(songSlider);
@@ -81,6 +81,16 @@ const Player = (function () {
                 player.updateSongSlider(player)}, 1000);
             // register the pomodoro data subscriptions
             // this.registerSubscritions();
+
+            /*
+            Change song using list 
+            */
+            this.songTitle = document.querySelector('list-item');
+            songTitle.addEventListener('load', function(e) {
+                console.log(e)
+                // player.loadSong(player, player.playOrPause);
+            });
+
         }
 
         
@@ -128,7 +138,7 @@ const Player = (function () {
                 }, 1000);
             });
             if (img) {
-               img.src = "img/assets/pause.svg"; 
+                img.src = "img/assets/pause.svg"; 
             }
             
             
