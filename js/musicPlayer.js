@@ -92,17 +92,20 @@ const Player = (function () {
             window.addEventListener('click', function(e) {
                 let play = false;
                 if (e.path[0].dataset.index != undefined ) {
-                    this.currentSong = e.path[0].dataset.index;
+                    player.currentSong = e.path[0].dataset.index;
                     play = true;
                 } else if (e.path[1].dataset.index != undefined ) {
-                    this.currentSong = e.path[1].dataset.index;
+                    player.currentSong = e.path[1].dataset.index;
                     play = true;
                 } else if (e.path[2].dataset.index != undefined ) {
-                    this.currentSong = e.path[2].dataset.index;
+                    player.currentSong = e.path[2].dataset.index;
                     play = true;
                 }
 
                 if (play) {
+                    console.log(player.currentSong);
+                    console.log(this.currentSong);
+                    console.log(player.playOrPause);
                     player.loadSong(player, player.playOrPause);
                 }
             });
