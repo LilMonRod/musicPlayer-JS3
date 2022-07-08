@@ -89,8 +89,8 @@ const Player = (function () {
             Change song using list 
             */
             this.completeDomList = document.querySelector('list-item');
-            this.completeDomList.addEventListener('click', function(e) {
-                console.log(e)
+            window.addEventListener('click', function(e) {
+                console.log(e);
                 // player.loadSong(player, player.playOrPause);
             });
 
