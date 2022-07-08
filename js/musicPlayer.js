@@ -90,18 +90,21 @@ const Player = (function () {
             */
             this.completeDomList = document.querySelector('list-item');
             window.addEventListener('click', function(e) {
-                console.log(e.path);
-
+                let play = false;
                 if (e.path[0].dataset.index != undefined ) {
-                    console.log("entró en la primera iteracion (0)")
+                    this.currentSong = e.path[0].dataset.index;
+                    play = true;
                 } else if (e.path[1].dataset.index != undefined ) {
-                    console.log("entró en la segunda iteracion (1)")
+                    this.currentSong = e.path[1].dataset.index;
+                    play = true;
                 } else if (e.path[2].dataset.index != undefined ) {
-                    console.log("entró en la tercera iteracion (2)")
-                } else {
-                    console.log("failed. no. entró en ninguna iteracion")
+                    this.currentSong = e.path[2].dataset.index;
+                    play = true;
                 }
-                // player.loadSong(player, player.playOrPause);
+
+                if (play) {
+                    player.loadSong(player, player.playOrPause);
+                }
             });
 
         }
