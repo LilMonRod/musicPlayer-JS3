@@ -29,7 +29,9 @@ const Player = (function () {
         next = null;
         song = null;
 
-        constructor (songTitle, songSlider, currentTime, duration, volumeSlider, star, completeList) {
+        completeDomList = null;
+
+        constructor (songTitle, songSlider, currentTime, duration, volumeSlider, star, completeDomList) {
             // elements
             this.songTitle = document.querySelector(songTitle);
             this.songSlider = document.querySelector(songSlider);
@@ -86,8 +88,8 @@ const Player = (function () {
             /*
             Change song using list 
             */
-            this.completeList = document.querySelector('list-item');
-            completeList.addEventListener('click', function(e) {
+            this.completeDomList = document.querySelector('list-item');
+            this.completeDomList.addEventListener('click', function(e) {
                 console.log(e)
                 // player.loadSong(player, player.playOrPause);
             });
