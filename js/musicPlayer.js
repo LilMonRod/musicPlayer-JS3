@@ -78,15 +78,16 @@ const Player = (function () {
                 player.adjustVolume(player)});
             
             setInterval(function(){
-                player.updateSongSlider(player)}, 1000);
+                player.updateSongSlider(player)
+            }, 1000);
             // register the pomodoro data subscriptions
             // this.registerSubscritions();
 
             /*
             Change song using list 
             */
-            this.songTitle = document.querySelector('list-item');
-            songTitle.addEventListener('click', function(e) {
+            this.completeList = document.querySelector('list-item');
+            completeList.addEventListener('click', function(e) {
                 console.log(e)
                 // player.loadSong(player, player.playOrPause);
             });
