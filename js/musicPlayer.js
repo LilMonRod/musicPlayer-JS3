@@ -90,13 +90,13 @@ const Player = (function () {
             */
             this.completeDomList = document.querySelector('list-item');
             window.addEventListener('click', function(e) {
-                console.log(e);
+                console.log(e.path);
 
                 if (e.path[0].dataset.index != undefined ) {
                     console.log("entró en la primera iteracion (0)")
                 } else if (e.path[1].dataset.index != undefined ) {
                     console.log("entró en la segunda iteracion (1)")
-                } else if (e.path[1].dataset.index != undefined ) {
+                } else if (e.path[2].dataset.index != undefined ) {
                     console.log("entró en la tercera iteracion (2)")
                 } else {
                     console.log("failed. no. entró en ninguna iteracion")
