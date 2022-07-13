@@ -109,31 +109,33 @@
 		
 		<!-- player -->
 		<div class="player-container player-container--BG clearfix">
-			<div class="logo">
-				<img id="logo-song" class="logo-img" src="img/main/lot.webp" alt="">
-			</div>
-			<div class="player">
-				<div id="songTitle" class="song-title">My song title will be here</div>
-				<input id="songSlider" class="song-slider" type="range" min="0" step="1"/>
-				<div class="controllers__time">
-					<div id="currentTime" class="current-time">00:00</div>
-					<div id="duration" class="duration">00:00</div>
+			<div style="width: 100%; max-width: 900px; margin: 0 auto;">
+				<div class="logo">
+					<img id="logo-song" class="logo-img" src="img/main/lot.webp" alt="">
 				</div>
-				<div class="controllers">
-					<div class="controllers--songs">
-						<img title="previous song" id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="previous song">
-						<img title="backward song" id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="backward song">
-						<img title="play Or Pause song" id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="play Or Pause song">
-						<img title="forward song" id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="forward song">
-						<img title="next song" id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="next song">
+				<div class="player">
+					<div id="songTitle" class="song-title">My song title will be here</div>
+					<input id="songSlider" class="song-slider" type="range" min="0" step="1"/>
+					<div class="controllers__time">
+						<div id="currentTime" class="current-time">00:00</div>
+						<div id="duration" class="duration">00:00</div>
 					</div>
-					
-					<div class="controllers--volume">
-						<img class="controllers__img--vol" src="img/assets/volume.svg" alt="">	  
-						<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+					<div class="controllers">
+						<div class="controllers--songs">
+							<img title="previous song" id="previous" class="controllers__img controllers--hover" src="img/assets/previous.svg" alt="previous song">
+							<img title="backward song" id="backward" class="controllers__img  controllers--hover" src="img/assets/rewind.svg" alt="backward song">
+							<img title="play Or Pause song" id="playOrPause" class="controllers__img--play  controllers--hover" src="img/assets/play.svg" alt="play Or Pause song">
+							<img title="forward song" id="forward" class="controllers__img  controllers--hover" src="img/assets/forward.svg" alt="forward song">
+							<img title="next song" id="next" class="controllers__img next  controllers--hover" src="img/assets/previous.svg" alt="next song">
+						</div>
+						
+						<div class="controllers--volume">
+							<img class="controllers__img--vol" src="img/assets/volume.svg" alt="">	  
+							<input id="volumeSlider" class="volume-slider volume" type="range" min="0" max="1" step="0.01"/>
+						</div>
+						
+						<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
 					</div>
-					
-					<img id="starPlayer" class="star" draggable="false" src="img/assets/star.svg">
 				</div>
 			</div>
 		</div>
