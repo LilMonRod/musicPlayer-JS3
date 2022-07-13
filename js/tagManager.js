@@ -15,9 +15,10 @@ window.addEventListener('click', function(e) {
         containerSongData = e.path[2];
     }
     
+    console.log(containerSongData.children[1].children[0].innerText);
     songData = containerSongData.children[1].children[0].innerText
-    userArtist = songData.split('-')[1];
-    userMusicName = songData.split('-')[0];
+    userArtist = songData.split(' - ')[1];
+    userMusicName = songData.split(' - ')[0];
     
     dataLayer.push({'musicName': userMusicName, 'artist': userArtist});
 });
