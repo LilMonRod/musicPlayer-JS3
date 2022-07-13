@@ -3,7 +3,6 @@
     let player = null;
     let builder = null;
     let playlist = null;
-   
 
     // methods
     function main () {

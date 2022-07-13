@@ -11,4 +11,4 @@
             panels[i].classList.add('active');
         }
     });
- })(document);
+})(document);
