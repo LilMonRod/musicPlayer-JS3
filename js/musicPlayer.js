@@ -106,9 +106,6 @@ const Player = (function () {
                 }
 
                 if (play) {
-                    console.log(player.currentSong);
-                    console.log(this.currentSong);
-                    console.log(player.playOrPause);
                     player.loadSong(player, player.playOrPause);
                 }
             });
@@ -117,7 +114,6 @@ const Player = (function () {
 
         
         loadSong(p, img = false) {
-            console.log(playList[p.currentSong]);
             const dataSong = playList[p.currentSong];
             const name = document.createElement('span');
             name.setAttribute('class', 'nameSong');
