@@ -3,7 +3,6 @@ dataLayer = [];
 const songList = document.getElementsByClassName('list-item');
 let containerSongData = "";
 
-
 window.addEventListener('click', function(e) {
     if (e.path[0].dataset.index != undefined ) {
         containerSongData = e.path[0];
@@ -16,5 +15,5 @@ window.addEventListener('click', function(e) {
         console.log(e.path[2]);
     }
 
-    // dataLayer.push({'musicName': userMusicCategory, 'artist': userArtist});
+    dataLayer.push({'musicName': userMusicCategory, 'artist': userArtist});
 });
