@@ -93,12 +93,15 @@ const Player = (function () {
                 let play = false;
                 if (e.path[0].dataset.index != undefined ) {
                     player.currentSong = e.path[0].dataset.index;
+                    this.currentSong = e.path[0].dataset.index;
                     play = true;
                 } else if (e.path[1].dataset.index != undefined ) {
                     player.currentSong = e.path[1].dataset.index;
+                    this.currentSong = e.path[1].dataset.index;
                     play = true;
                 } else if (e.path[2].dataset.index != undefined ) {
                     player.currentSong = e.path[2].dataset.index;
+                    this.currentSong = e.path[2].dataset.index;
                     play = true;
                 }
 
@@ -114,6 +117,7 @@ const Player = (function () {
 
         
         loadSong(p, img = false) {
+            console.log(playList[p.currentSong]);
             const dataSong = playList[p.currentSong];
             const name = document.createElement('span');
             name.setAttribute('class', 'nameSong');
@@ -159,8 +163,6 @@ const Player = (function () {
             if (img) {
                 img.src = "img/assets/pause.svg"; 
             }
-            
-            
         }
         updateSongSlider(p) {
             let c = Math.round(p.song.currentTime);
@@ -197,7 +199,6 @@ const Player = (function () {
         }
 
         nextSong(p) {
-            
             p.currentSong = p.currentSong + 1 % playList.length;
             p.currentSong = (p.currentSong > playList.length - 1) ? p.currentSong - p.currentSong : p.currentSong;
             p.loadSong(p);
