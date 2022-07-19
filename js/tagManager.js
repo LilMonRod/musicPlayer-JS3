@@ -1,4 +1,3 @@
-dataLayer = [];
 
 const songList = document.getElementsByClassName('list-item');
 let containerSongData = "";
@@ -18,5 +17,5 @@ window.addEventListener('click', function(e) {
     userArtist = containerSongData.split(' - ')[1];
     userMusicName = containerSongData.split(' - ')[0];
     
-    dataLayer.push({'musicName': userMusicName, 'artist': userArtist});
+    window.dataLayer.push({'musicName': userMusicName, 'artist': userArtist});
 });
