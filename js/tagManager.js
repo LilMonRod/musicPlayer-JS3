@@ -8,17 +8,15 @@ let userArtist = "";
 
 window.addEventListener('click', function(e) {
     if (e.path[0].dataset.index != undefined ) {
-        containerSongData = e.path[0];
+        containerSongData = e.path[0].children[1].children[0].innerText;
     } else if (e.path[1].dataset.index != undefined ) {
-        containerSongData = e.path[1];
+        containerSongData = e.path[1].children[1].children[0].innerText;
     } else if (e.path[2].dataset.index != undefined ) {
-        containerSongData = e.path[2];
+        containerSongData = e.path[2].children[1].children[0].innerText;
     }
-    
-    console.log(containerSongData.children[1].children[0].innerText);
-    songData = containerSongData.children[1].children[0].innerText
-    userArtist = songData.split(' - ')[1];
-    userMusicName = songData.split(' - ')[0];
+
+    userArtist = containerSongData.split(' - ')[1];
+    userMusicName = containerSongData.split(' - ')[0];
     
     dataLayer.push({'musicName': userMusicName, 'artist': userArtist});
 });
