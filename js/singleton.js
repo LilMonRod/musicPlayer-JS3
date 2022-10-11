@@ -103,6 +103,15 @@ const Singleton = (function () {
                 cover: 'img/album/a1894322872_10.jpg',
                 stared: true,
                 src: 'songs/lake_street_dive_hypotheticals.mp3'
+            },
+            {
+                name: 'Rude',
+                artist: 'Magic!',
+                album: "Don't Kill the Magic",
+                year: '2014',
+                cover: 'img/album/donotkillthemagic.png',
+                stared: false,
+                src: 'songs/magic_rude.mp3'
             }
         ],
         []
